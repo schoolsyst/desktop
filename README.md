@@ -1,2 +1,2 @@
 # desktop
-schoolsyst's desktop app, an Electron wrapper around schoolsyst/webapp
+schoolsyst's desktop app
