@@ -2,6 +2,7 @@ const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
 const inquirer =  require('inquirer');
+const fs = require('fs');
 const { exec } = require('child_process')
 
 clear(); // clear the actual terminal

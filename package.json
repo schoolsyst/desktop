@@ -4,6 +4,8 @@
   "description": "schoolsyst's desktop app, an Electron wrapper around schoolsyst/webapp",
   "main": "app.js",
   "scripts": {
+    "dev": "cd ./webapp && pnpm dev:frontend && cd ../ && cross-env NODE_ENV=DEV electron .",
+    "electron-dev": "cross-env NODE_ENV=DEV electron .",
     "postinstall": "node setup.js"
   },
   "repository": {
