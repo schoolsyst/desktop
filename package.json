@@ -4,8 +4,7 @@
   "description": "schoolsyst's desktop app, an Electron wrapper around schoolsyst/webapp",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "node setup.js"
+    "postinstall": "node setup.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,9 @@
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
     "cross-env": "^7.0.2",
+    "electron": "^10.1.0",
+    "electron-builder": "^22.8.0",
+    "electron-devtools-installer": "^3.1.1",
     "figlet": "^1.5.0",
     "inquirer": "^7.3.3"
   }
