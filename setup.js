@@ -23,8 +23,8 @@ let moduleManager = {
 	type: 'list',
 	name: 'moduleManager',
 	message: 'Select the module manager for node.js you wish want to use (will be used to install depandancy for submodule) : ',
-	choices: ["NPM", "YARN", "PNPM"],
-	default: "NPM"
+	choices: ["npm", "yarn", "pnpm"],
+	default: "npm"
 };
 
 inquirer
