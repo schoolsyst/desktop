@@ -4,9 +4,12 @@
   "description": "schoolsyst's desktop app, an Electron wrapper around schoolsyst/webapp",
   "main": "app.js",
   "scripts": {
-    "dev": "cd ./webapp && pnpm dev:frontend && cd ../ && cross-env NODE_ENV=DEV electron .",
+    "dev": "cross-env NODE_ENV=DEV electron .",
+    "dev:watch": "cross-env NODE_ENV=DEV nodemon --exec 'electron .'",
     "electron-dev": "cross-env NODE_ENV=DEV electron .",
-    "postinstall": "node setup.js"
+    "postinstall": "electron-builder install-app-deps && node setup.js",
+    "syncDep": "electron-builder install-app-deps",
+    "dist": "electron-builder "
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,9 @@
   },
   "homepage": "https://github.com/schoolsyst/desktop#readme",
   "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
     "cross-env": "^7.0.2",
@@ -34,6 +40,34 @@
     "electron-builder": "^22.8.0",
     "electron-devtools-installer": "^3.1.1",
     "figlet": "^1.5.0",
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "nodemon": "^2.0.4"
+  },
+  "build": {
+    "appId": "com.schoolsyst.desktop",
+    "files": [
+      "app.js",
+      "src/**",
+      "build/**"
+      "package.json",
+      "webapp/dist/**/*",
+      "node_modules/**/*",
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!node_modules/*.d.ts",
+      "!node_modules/.bin",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/logo_schoolsyst.ico"
+    },
+    "directories": {
+      "buildResources": "resources"
+    },
+    "publish": null
   }
 }
