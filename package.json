@@ -7,10 +7,11 @@
     "dev": "cross-env NODE_ENV=DEV electron .",
     "dev:watch": "cross-env NODE_ENV=DEV nodemon --config nodemon.config.json --exec 'electron .'",
     "electron-dev": "cross-env NODE_ENV=DEV electron .",
-    "postinstall": "electron-builder install-app-deps && node setup.js",
     "syncDep": "electron-builder install-app-deps",
     "dist:win": "electron-builder --win",
-    "dist:linux": "electron-builder --linux"
+    "dist:linux": "electron-builder --linux",
+    "postinstall": "electron-builder install-app-deps",
+    "setup": "node setup.js"
   },
   "repository": {
     "type": "git",
