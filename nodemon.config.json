@@ -1,0 +1,5 @@
+{
+  "verbose": false,
+  "ignore": ["node_modules/*", "dist/*", "build/*"],
+  "delay": "2500"
+}

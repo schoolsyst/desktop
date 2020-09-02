@@ -9,7 +9,7 @@ clear(); // clear the actual terminal
 
 console.log(
 	chalk.blueBright(
-		figlet.textSync('SchoolSyst', { font: "Small Slant", horizontalLayout: 'full' })
+		figlet.textSync('schoolsyst', { font: "Small Slant", horizontalLayout: 'full' })
 	)
 );
 
@@ -33,7 +33,7 @@ inquirer
 	 ])
 	.then(answers => {
 		console.log(chalk.green('>'), chalk.white(`Launching installation with :`), chalk.cyan(answers.moduleManager));		
-		exec(`git pull --recurse-submodules && cd ${__dirname}/webapp && ${answers.moduleManager} install`, (error, stdout) => {
+		exec(`git pull --recurse-submodules && cd ${__dirname}/webapp && ${answers.moduleManager} install && ${answers.moduleManager} build`, (error, stdout) => {
 			if (error) {
 			  console.error(chalk.redBright('x'), `error while setuping submodule, error: ${error}`);
 			}

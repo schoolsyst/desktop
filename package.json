@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=DEV electron .",
-    "dev:watch": "cross-env NODE_ENV=DEV nodemon --exec 'electron .'",
+    "dev:watch": "cross-env NODE_ENV=DEV nodemon --config nodemon.config.json --exec 'electron .'",
     "electron-dev": "cross-env NODE_ENV=DEV electron .",
     "postinstall": "electron-builder install-app-deps && node setup.js",
     "syncDep": "electron-builder install-app-deps",
@@ -50,6 +50,8 @@
       "app.js",
       "src/**",
       "build/**",
+      "electron/**",
+      "express/**",
       "package.json",
       "webapp/dist/**/*",
       "node_modules/**/*",
@@ -69,9 +71,6 @@
     "linux": {
       "target": "appImage",
       "icon": "build/logo_schoolsyst.png"
-    },
-    "directories": {
-      "buildResources": "resources"
     },
     "publish": null
   }

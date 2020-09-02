@@ -1,16 +1,16 @@
-const { app } = require('electron');
+const express = require('express');
+const app = express();
 
 var server = {};
+var listen;
 
 server.start = function (path, port) {
-    const express = require('express');
-    const app = express();
     app.use(express.static(path));
-    app.listen(port);
+    listen = app.listen(port);
 }
 
 server.stop = function () {
-    app.quit();
+   listen.close();
 }
 
 module.exports = server;
