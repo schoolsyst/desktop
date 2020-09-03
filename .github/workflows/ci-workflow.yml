@@ -38,7 +38,7 @@ jobs:
       with:
         node-version: 12.x
     - run: npm i --dev; cd .\webapp; npm i --dev; npm run build:dev; cd ..\ # Install webapp and build in dev (api doesn't accept cross orgin request)
-    - run: npm run dist:windows # (build the desktop app)
+    - run: npm run dist:win # (build the desktop app)
     - uses: actions/upload-artifact@master
       with:
         name: schoolsyst-desktop.exe

@@ -69,7 +69,7 @@
       "artifactName": "${productName}.${version}.${os}.${ext}"
     },
     "linux": {
-      "target": ["appImage","pacman","deb","tar.gz"],
+      "target": "appImage",
       "icon": "build/logo_schoolsyst.png",
       "artifactName": "${productName}.${version}.${os}.${ext}"
     },
