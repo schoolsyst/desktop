@@ -1,0 +1,45 @@
+name: Build CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  linux:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+            submodules: true
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm i --dev && cd ./webapp && npm i --dev && npm run build:dev && cd ../
+    - run: npm run dist:linux
+    - uses: actions/upload-artifact@master
+      with:
+        name: schoolsyst-desktop.appImage
+        path: dist/**.AppImage
+
+  windows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+            submodules: true
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm i --dev; cd .\webapp; npm i --dev; npm run build:dev; cd ..\ # Install webapp and build in dev (api doesn't accept cross orgin request)
+    - run: npm run dist:win # (build the desktop app)
+    - uses: actions/upload-artifact@master
+      with:
+        name: schoolsyst-desktop.exe
+        path: dist/**.exe
