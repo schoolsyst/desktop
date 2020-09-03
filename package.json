@@ -6,8 +6,6 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=DEV electron .",
     "dev:watch": "cross-env NODE_ENV=DEV nodemon --config nodemon.config.json --exec 'electron .'",
-    "electron-dev": "cross-env NODE_ENV=DEV electron .",
-    "syncDep": "electron-builder install-app-deps",
     "dist:win": "electron-builder --win",
     "dist:linux": "electron-builder --linux",
     "postinstall": "electron-builder install-app-deps",
@@ -67,11 +65,13 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "build/logo_schoolsyst.ico"
+      "icon": "build/logo_schoolsyst.ico",
+      "artifactName": "${productName}.${version}.${os}.${ext}"
     },
     "linux": {
-      "target": "appImage",
-      "icon": "build/logo_schoolsyst.png"
+      "target": ["appImage","pacman","deb","tar.gz"],
+      "icon": "build/logo_schoolsyst.png",
+      "artifactName": "${productName}.${version}.${os}.${ext}"
     },
     "publish": null
   }
