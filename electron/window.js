@@ -16,13 +16,10 @@ function createMainWindow(icon, url) {
 
     win.loadURL(url).then(() => console.log("URL loaded."));
     win.maximize();
-
-    win.on('restore', function (event) {
-        win.show();
-        win.setSkipTaskbar(false);
-        // tray.destroy();
-    });
     
+    win.on('show', function (event) {
+        win.setSkipTaskbar(false);
+    })
 
     win.on('close', function(event){
         event.preventDefault();
