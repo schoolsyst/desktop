@@ -10,7 +10,7 @@ Here's how to install the desktop app:
 1. Clone the repo and `cd` into it
 
 ```bash
-git clone https://github.com/schoolsyst/desktop.git
+git clone https://github.com/schoolsyst/desktop.git --recurse-submodules
 cd desktop
 ```
 
