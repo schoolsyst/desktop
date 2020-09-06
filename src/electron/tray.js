@@ -5,14 +5,14 @@
 | TODO : SEE #3 add settings to do the action setuped in 
 \*-----------------------------------------------------*/
 
-const { Tray, Menu, app, nativeImage } = require("electron");
+const { Tray, Menu, app } = require("electron");
 
 function createTray(icon, win) {
-    let tray = new Tray(icon);
+    let tray = new Tray(icon.resize({height: 16, width: 16}));
     const contextMenu = Menu.buildFromTemplate([
         { 
             label: 'schoolsyst',
-            icon: nativeImage.createFromPath(icon).resize({
+            icon: icon.resize({
                 height: 16,
                 width: 16
             }),
