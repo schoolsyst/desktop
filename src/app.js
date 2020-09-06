@@ -4,9 +4,11 @@ const { createTray } = require("./electron/tray");
 const server = require('./express/server');
 const path = require('path');
 
-server.start(path.normalize(`${__dirname}/webapp/dist`), process.env.PORT ? process.env.PORT : 8080);
+if(require('electron-squirrel-startup')) app.quit(); // if we need of squirel
+
+server.start(path.normalize(`${__dirname}/../webapp/dist`), process.env.PORT ? process.env.PORT : 8080);
 const _URL_ = `http://localhost:${process.env.PORT ? process.env.PORT : 8080}`;
-const icon = path.join(__dirname, 'build/logo_schoolsyst.ico')
+const icon = path.join(__dirname, '../build/logo_schoolsyst.ico')
 
 /*************
 ** Electron **
