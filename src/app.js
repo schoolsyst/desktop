@@ -8,7 +8,7 @@ if(require('electron-squirrel-startup')) app.quit(); // if we need of squirel
 
 server.start(path.normalize(`${__dirname}/../webapp/dist`), process.env.PORT ? process.env.PORT : 8080);
 const _URL_ = `http://localhost:${process.env.PORT ? process.env.PORT : 8080}`;
-const icon = nativeImage.createFromPath(path.join(__dirname, '../design/logo/app-icon.png'));
+const icon = nativeImage.createFromPath(path.join(__dirname, '../design/logo/app-icon.png')).resize({height: 500,width:500});
 
 /*************
 ** Electron **
