@@ -59,44 +59,6 @@
     "eslint-plugin-react": "^7"
   },
   "config": {
-    "forge": {
-      "make_targets": {
-        "win32": [
-          "squirrel"
-        ],
-        "darwin": [
-          "zip"
-        ],
-        "linux": [
-          "deb",
-          "rpm"
-        ]
-      },
-      "electronPackagerConfig": {
-        "packageManager": "yarn",
-        "ignore": [
-          ".git(ignore|modules)",
-          "(webapp)\/(?!dist)\\S+",
-          "license",
-          "nodemon.config.json", 
-          "README.md", 
-          "setup.js",
-          ""
-        ]
-      },
-      "electronWinstallerConfig": {
-        "name": "schoolsyst-desktop"
-      },
-      "electronInstallerDebian": {},
-      "electronInstallerRedhat": {},
-      "github_repository": {
-        "owner": "schoolsyst",
-        "name": "desktop"
-      },
-      "windowsStoreConfig": {
-        "packageName": "com.schoolsyst.desktop",
-        "name": "schoolsyst-desktop"
-      }
-    }
+    "forge": "./forge.config.js"
   }
 }
