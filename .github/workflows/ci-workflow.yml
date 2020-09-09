@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - run: apt-get install -y zip
+    - run: sudo apt-get install -y zip
     - run: npm i --dev && cd ./webapp && npm i --dev && npm run build:dev && cd ../
     - run: npm run make
     - uses: actions/upload-artifact@master
