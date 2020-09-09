@@ -40,5 +40,15 @@ module.exports = {
     windowsStoreConfig: {
         packageName: "com.schoolsyst.desktop",
         name: "schoolsyst-desktop"
-    }
+    },
+    publishers: [
+        {
+          name: '@electron-forge/publisher-github',
+          platforms: ['win32', 'linux'],
+          config: {
+            owner: 'schoolsyst',
+            name: 'desktop'
+          }
+        }
+    ]
 }
