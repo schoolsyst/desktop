@@ -5,8 +5,8 @@
   "description": "schoolsyst's desktop app, an Electron wrapper around schoolsyst/webapp",
   "main": "src/app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=DEV electron-forge start",
-    "start:watch": "cross-env NODE_ENV=DEV nodemon --config nodemon.config.json --exec 'electron-forge start'",
+    "start": "cross-env NODE_ENV=dev electron-forge start",
+    "start:watch": "cross-env NODE_ENV=dev nodemon --config nodemon.config.json --exec 'electron-forge start'",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
