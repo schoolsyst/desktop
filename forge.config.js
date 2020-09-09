@@ -9,7 +9,7 @@ module.exports = {
         ],
         linux: [
             "deb",
-            "rpm"
+            "zip"
         ]
     },
     electronPackagerConfig: {
