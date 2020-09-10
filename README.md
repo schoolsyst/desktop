@@ -1,4 +1,6 @@
-# desktop
+<center><img alt="schoolsyst-desktop's logo" src="./design/logo/app-icon.png" width="25%"></center>
+
+# schoolsyst-desktop
 schoolsyst's desktop app
 
 ## How do I run this app locally ?
@@ -19,19 +21,35 @@ _The installation procedure changes depending on your platform, head over to [No
 
 3. Install the project's dependencies
 
+⚠ pnpm ne marche pas, les symlinks sont interdit lors de la compilation.
+
 ```bash
-yarn # Using yarn, or
-npm install # Using npm, or
-pnpm install # Using pnpm, very recomanded one
+yarn -D # Using yarn, or
+npm install -D # Using npm
 ```
 
-4. Complete the interactive setup launched by installation
+4. Complete the interactive setup for build the web app
+```bash
+yarn run setup # Using yarn, or
+npm run setup # Using npm
+```
 
 5. Start the app
 ```bash
 yarn start # Using yarn, or
 npm run start # Using npm, or
-pnpm start # Using pnpm, very recomanded one
 ```
 
-This will compile the webapp and launch the desktop app.
+6. Start the app in dev mode :
+```bash
+yarn start:watch # Using yarn, or
+npm run start:watch # Using npm, or
+```
+
+7. Build the app :
+
+The app will be builed for your currents OS :
+```bash
+yarn make # Using yarn, or
+npm run make # Using npm, or
+```
