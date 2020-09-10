@@ -11,9 +11,9 @@ if(require('electron-squirrel-startup')) app.quit(); // if we need of squirel
 ****************/
 if (process.env.NODE_ENV != "dev") {
 	const updateServer = 'http://desktop.schoolsyst.com';
-	const updateUrl = `${updateServer}/update/${process.platform}/${app.getVersion()}`;
+	const url = `${updateServer}/update/${process.platform}/${app.getVersion()}`;
 
-	autoUpdater.setFeedURL({ updateUrl });
+	autoUpdater.setFeedURL({ url });
 	setInterval(() => {autoUpdater.checkForUpdates()}, 60000);
 
 	autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
