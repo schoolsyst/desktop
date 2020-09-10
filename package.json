@@ -1,7 +1,7 @@
 {
   "name": "schoolsyst-desktop",
   "productName": "schoolsyst-desktop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "schoolsyst's desktop app, an Electron wrapper around schoolsyst/webapp",
   "main": "src/app.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "eslint src --color",
-    "setup": "node setup.js"    
+    "setup": "node setup.js"
   },
   "repository": {
     "type": "git",
@@ -40,23 +40,23 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
     "cross-env": "^7.0.2",
     "electron-devtools-installer": "^3.1.1",
-    "figlet": "^1.5.0",
-    "inquirer": "^7.3.3",
-    "nodemon": "^2.0.4",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "electron-forge": "^5.2.4",
     "electron-prebuilt-compile": "8.2.0",
     "eslint": "^3",
     "eslint-config-airbnb": "^15",
     "eslint-plugin-import": "^2",
     "eslint-plugin-jsx-a11y": "^5",
-    "eslint-plugin-react": "^7"
+    "eslint-plugin-react": "^7",
+    "figlet": "^1.5.0",
+    "inquirer": "^7.3.3",
+    "nodemon": "^2.0.4"
   },
   "config": {
     "forge": "./forge.config.js"
