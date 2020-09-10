@@ -48,3 +48,7 @@ jobs:
       with:
         name: schoolsyst-desktop Setup.exe
         path: out/make/squirrel.windows/x64/**.exe
+    - uses: actions/upload-artifact@master
+      with:
+        name: squirrel.windows
+        path: out/make/squirrel.windows/x64/**
