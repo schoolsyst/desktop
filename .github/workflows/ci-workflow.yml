@@ -19,12 +19,17 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
+    - run: sudo apt-get install -y zip
     - run: npm i --dev && cd ./webapp && npm i --dev && npm run build:dev && cd ../
-    - run: npm run dist:linux
+    - run: npm run make
     - uses: actions/upload-artifact@master
       with:
-        name: schoolsyst-desktop.appImage
-        path: dist/**.AppImage
+        name:  schoolsyst-desktop.deb
+        path: out/make/**.deb
+    - uses: actions/upload-artifact@master
+      with:
+        name:  schoolsyst-desktop-linux.zip
+        path: out/make/**.zip
 
   windows:
     runs-on: windows-latest
@@ -38,8 +43,8 @@ jobs:
       with:
         node-version: 12.x
     - run: npm i --dev; cd .\webapp; npm i --dev; npm run build:dev; cd ..\ # Install webapp and build in dev (api doesn't accept cross orgin request)
-    - run: npm run dist:win # (build the desktop app)
+    - run: npm run make # (build the desktop app)
     - uses: actions/upload-artifact@master
       with:
-        name: schoolsyst-desktop.exe
-        path: dist/**.exe
+        name: schoolsyst-desktop Setup.exe
+        path: out/make/squirrel.windows/x64/**.exe
