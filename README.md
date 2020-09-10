@@ -21,7 +21,7 @@ _The installation procedure changes depending on your platform, head over to [No
 
 3. Install the project's dependencies
 
-⚠ pnpm ne marche pas, les symlinks sont interdit lors de la compilation.
+⚠ pnpm didn't work, symlink are forbiden during compilation
 
 ```bash
 yarn -D # Using yarn, or
