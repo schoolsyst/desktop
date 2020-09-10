@@ -1,4 +1,6 @@
 const path = require('path');
+const package = require('./package.json');
+
 module.exports = {
     make_targets: {
         win32: [
@@ -29,7 +31,8 @@ module.exports = {
         name: "schoolsyst-desktop",
         iconUrl: "https://raw.githubusercontent.com/schoolsyst/design/master/logo/app-icon.ico",
         setupIcon: path.join(__dirname, "design/logo/app-icon.ico"),
-        loadingGif: path.join(__dirname, "design/logo-animations/loading-overlay.gif")
+        loadingGif: path.join(__dirname, "design/logo-animations/loading-overlay.gif"),
+        remoteReleases: `http://desktop.schoolsyst.com/update/win32/${package.version}/RELEASES`
     },
     electronInstallerDebian: {},
     electronInstallerRedhat: {},
