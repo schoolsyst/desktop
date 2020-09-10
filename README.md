@@ -1,4 +1,4 @@
-<center><img alt="schoolsyst-desktop's logo" src="./design/logo/app-icon.png" width="25%"></center>
+<center><img alt="schoolsyst-desktop's logo" src="https://raw.githubusercontent.com/schoolsyst/design/master/logo/app-icon.png" width="25%"></center>
 
 # schoolsyst-desktop
 schoolsyst's desktop app
